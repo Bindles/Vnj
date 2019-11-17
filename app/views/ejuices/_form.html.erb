@@ -1,0 +1,50 @@
+<%= form_with(model: ejuice, local: true) do |form| %>
+  <% if ejuice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ejuice.errors.count, "error") %> prohibited this ejuice from being saved:</h2>
+
+      <ul>
+        <% ejuice.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+
+ <% if @ejuice.image != nil %>
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fp %>
+    <%= form.text_field :fp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flavor %>
+    <%= form.text_field :flavor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+    <%= form.text_area :desc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

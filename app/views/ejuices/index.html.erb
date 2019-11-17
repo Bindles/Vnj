@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ejuices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Fp</th>
+      <th>Flavor</th>
+      <th>Desc</th>
+      <th>Rating</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ejuices.each do |ejuice| %>
+      <tr>
+        <td><%= ejuice.name %></td>
+        <td><%= ejuice.fp %></td>
+        <td><%= ejuice.flavor %></td>
+        <td><%= ejuice.desc %></td>
+        <td><%= ejuice.rating %></td>
+    
+
+
+        <td><%= link_to 'Show', ejuice %></td>
+        <td><%= link_to 'Edit', edit_ejuice_path(ejuice) %></td>
+        <td><%= link_to 'Destroy', ejuice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ejuice', new_ejuice_path %>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ejuice.name %>
+</p>
+
+<p>image:
+<% if @ejuice.image.present? %>
+<%= image_tag(@ejuice.image) =%>
+<%= @ejuice.image =%>
+<% end %>
+</p>
+
+
+<p>
+  <strong>Fp:</strong>
+  <%= @ejuice.fp %>
+</p>
+
+<p>
+  <strong>Flavor:</strong>
+  <%= @ejuice.flavor %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @ejuice.desc %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @ejuice.rating %>
+</p>
+
+<%= link_to 'Edit', edit_ejuice_path(@ejuice) %> |
+<%= link_to 'Back', ejuices_path %>
